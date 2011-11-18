@@ -1,0 +1,4 @@
+Basic implementation of a parallel filesystem listing that was
+left as an exercise to the reader in this tutorial http://www.corensic.com/Learn/Resources/ConcurrencyTutorialPartNine.aspx 
+
+The code uses boost::filesystem for accesing the files
