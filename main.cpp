@@ -36,6 +36,9 @@ struct DirServer {
     void operator()(MsgQueue<path>& dirQueue, MsgQueue<std::string>& fileQueue){
         for(;;){
             path dir = dirQueue.receive();
+            // Break the loop when received an empty dir
+            if(dir == "") break;
+
             for(auto it=directory_iterator(dir);it!=directory_iterator();++it){
                 if(is_directory(*it)){
                     dirQueue.send(*it);
